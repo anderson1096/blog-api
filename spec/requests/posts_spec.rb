@@ -127,4 +127,11 @@ RSpec.describe "Posts", type: :request do
       expect(response).to have_http_status(:unprocessable_entity)
     end
   end
+
+
+  private
+
+  def payload
+    JSON.parse(response.body).with_indiferent_access
+  end
 end
